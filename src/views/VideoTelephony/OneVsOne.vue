@@ -207,12 +207,7 @@ onUnmounted(() => {
 
 <template>
   <div class="page-wrap">
-    <p class="desc">
-      1.先點擊Open Media，獲取視訊和音訊權限。
-      <br />
-      2.點擊Create Room，創建Room並產生RoomID。
-      <br />
-    </p>
+    <p class="desc">請在底下輸入對方的peerId建立通話</p>
     <div class="room">
       <p v-if="localPeerId">{{ localPeerId }}</p>
       <p v-else>ID產生中...</p>
