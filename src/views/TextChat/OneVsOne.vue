@@ -326,7 +326,6 @@ onUnmounted(() => {
         建立
       </button>
     </div>
-    <!-- v-else -->
     <div v-else>
       <h2 class="my-5">聊天室</h2>
       <h3 class="my-5">對方:{{ peerUsername }}</h3>

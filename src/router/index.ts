@@ -18,6 +18,13 @@ export const routes = [
     component: () => import("@/views/VideoTelephony/OneVsOne.vue"),
     meta: {},
   },
+  {
+    id: null,
+    path: "/textChat/oneVsOne",
+    name: "textChat-oneVsOne",
+    component: () => import("@/views/TextChat/OneVsOne.vue"),
+    meta: {},
+  },
 ];
 
 const scrollBehavior: RouterScrollBehavior = async (
