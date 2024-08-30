@@ -159,9 +159,19 @@ const toggleVideo = () => {
   }
 };
 
+const configuration = {
+  iceServers: [
+    {
+      urls: ["stun:stun1.l.google.com:19302", "stun:stun2.l.google.com:19302"],
+    },
+  ],
+  iceCandidatePoolSize: 10,
+};
 // 初始化 Peer
 const initializePeer = () => {
-  peer.value = new Peer();
+  peer.value = new Peer({
+    config: configuration,
+  });
 
   peer.value.on("open", (id) => {
     localPeerId.value = id;
@@ -207,7 +217,7 @@ onUnmounted(() => {
 
 <template>
   <div class="page-wrap">
-    <p class="desc">請在底下輸入對方的peerId建立通話</p>
+    <p class="desc">請在底下輸入對方的Peer ID建立通話</p>
     <div class="room">
       <p v-if="localPeerId">{{ localPeerId }}</p>
       <p v-else>ID產生中...</p>
@@ -296,6 +306,11 @@ button {
 }
 .small-btn-style {
   padding: 5px;
+}
+
+input {
+  height: 30px;
+  padding: 0 10px;
 }
 
 .room {
